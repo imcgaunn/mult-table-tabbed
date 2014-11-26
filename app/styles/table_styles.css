@@ -1,0 +1,19 @@
+/* make first number in every row
+and the header row bold */
+tr td:first-child, tbody tr:first-child {
+                       font-weight: bold;
+                   }
+/* the multiplier column */
+tr td:first-child {
+    padding-right: 10px;
+    color: blue;
+}
+/* the multiplicand row */
+tbody tr:first-child {
+    color: orange;
+}
+/* center columnwise each entry in the table */
+td {
+    text-align: center;
+    padding: 5px;
+}

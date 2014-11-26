@@ -1,0 +1,108 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>jquery_tabs_bootstrap</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/table_styles.css">
+    <link rel="stylesheet" href="styles/tab_styles.css">
+    <!-- endbuild -->
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h3 class="text-muted">jquery_tabs_bootstrap</h3>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-6" id="inputs"> <!-- left column -->
+          <h4> Table Options </h4>
+          <form id="ranges" action="javascript:void(0)">
+            <h4 style="color: orange">Multiplier (start, end)</h4>
+            <input type="number" id="multiplierStart" name="multiplierStart" size="5" value="1"></input>
+            <input type="number" id="multiplierEnd" name="multiplierEnd" size="5" value="2"></input>
+            <br />
+            <h4 style="color: green">Multiplicand (start, end)</h4>
+            <input type="number" id="multiplicandStart" name="multiplicandStart" size="5" value="1"></input>
+            <input type="number" id="multiplicandEnd" name="multiplicandEnd" size="5" value="2"></input>
+            <br />
+            <input type="submit" value="Create Table" class="btn btn-success"></input>
+          </form> <!-- end form -->
+        </div>
+
+        <div class="col-lg-6" id="status"> <!-- right column -->
+          <h4> Current Tables </h4>
+          <div id="curTables">
+            <!-- dynamically updating list of tables generated -->
+            <div id="delTabs">
+              <input type="button" id="delTab" class="btn btn-danger" value="Delete Selected">
+              <br />
+            </div>
+
+            <br />
+
+            <input type="button" id="addTab" class="btn btn-success" value="Add Tab">
+
+          </div>
+        </div>
+
+        <div class="col-lg-12" id="tables"> <!-- right column -->
+          <div id="mytabs">
+            <ul class="nav nav-tabs">
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="footer">
+      </div>
+
+    </div>
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/plugins.js -->
+    <script src="bower_components/bootstrap/js/affix.js"></script>
+    <script src="bower_components/bootstrap/js/alert.js"></script>
+    <script src="bower_components/bootstrap/js/dropdown.js"></script>
+    <script src="bower_components/bootstrap/js/tooltip.js"></script>
+    <script src="bower_components/bootstrap/js/modal.js"></script>
+    <script src="bower_components/bootstrap/js/transition.js"></script>
+    <script src="bower_components/bootstrap/js/button.js"></script>
+    <script src="bower_components/bootstrap/js/popover.js"></script>
+    <script src="bower_components/bootstrap/js/carousel.js"></script>
+    <script src="bower_components/bootstrap/js/scrollspy.js"></script>
+    <script src="bower_components/bootstrap/js/collapse.js"></script>
+    <script src="bower_components/bootstrap/js/tab.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/gentable.js"></script>
+
+    <script>
+      $(document).ready(function() {
+      $('#mytabs').tabs();
+      });
+    </script>
+    <!-- endbuild -->
+  </body>
+</html>
