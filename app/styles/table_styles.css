@@ -1,3 +1,12 @@
+/*
+File: app/styles/table_styles.css
+91.461 Assignment 8
+Ian McGaunn, UMass Lowell Computer Science, imcgaunn@cs.uml.edu
+Copyright (c) 2014 by Ian McGaunn. All rights reserved. May be freely
+copied or excerpted for educational purposes with credit to the author.
+*/
+
+
 /* make first number in every row
 and the header row bold */
 tr td:first-child, tbody tr:first-child {
