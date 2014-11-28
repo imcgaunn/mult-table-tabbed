@@ -4,7 +4,11 @@
 
 $(document).ready(function() {
 
+    // the validation plugin will pass the form
+    // to this function, but it ends up being
+    // easier to refer to DOM elements by ID, so it is ignored
     function genTable(form) {
+
         // grab the div associated with the currently active tab
         var curli = $('li.active a');
         var curdiv = $(curli.attr('href'));
@@ -27,7 +31,6 @@ $(document).ready(function() {
         table.empty();
 
         // create a top row
-        
         table.append($('<tr class="first">'));
         console.log('selector: ' + tableID + ' .first');
         
@@ -55,6 +58,8 @@ $(document).ready(function() {
 
     $(document).ready(function() {
         $('#ranges').validate({
+
+            // call this function if validation passes
             submitHandler: genTable,
             rules: {
                 multiplierStart: {
@@ -92,8 +97,5 @@ $(document).ready(function() {
         });
 
     });
-
-
-    
 
 });

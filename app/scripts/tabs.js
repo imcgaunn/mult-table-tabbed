@@ -29,6 +29,7 @@ $(document).ready(function() {
         // add checkbox to form
         var checkbox = $('<input>').attr('type', 'checkbox')
             .attr('id', 'check'+tabNum);
+        
         var span = $('<span>').text('Tab' + tabNum);
 
         $('#delTabs').append(checkbox);
