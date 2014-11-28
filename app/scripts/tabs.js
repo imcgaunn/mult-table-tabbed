@@ -6,6 +6,9 @@
   copied or excerpted for educational purposes with credit to the author.
 */
 
+// TODO: if there are no checkboxes selected and the delete button
+//       is pressed, display an error and tell user how to fix it.
+
 'use strict';
 
 $(document).ready(function() {
