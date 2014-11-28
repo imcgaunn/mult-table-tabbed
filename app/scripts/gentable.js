@@ -20,10 +20,10 @@ $(document).ready(function() {
         var curdiv = $(curli.attr('href'));
         var tableID = curli.attr('href') + 'table';
 
-        var multiplierStart = $('#multiplierStart').val();
-        var multiplierEnd = $('#multiplierEnd').val();
-        var multiplicandStart = $('#multiplicandStart').val();
-        var multiplicandEnd = $('#multiplicandEnd').val();
+        var multiplierStart = parseFloat($('#multiplierStart').val());
+        var multiplierEnd = parseFloat($('#multiplierEnd').val());
+        var multiplicandStart = parseFloat($('#multiplicandStart').val());
+        var multiplicandEnd = parseFloat($('#multiplicandEnd').val());
 
         curdiv.prepend($('<h4>').text(
             'multiplier start: ' + multiplierStart
