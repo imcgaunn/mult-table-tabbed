@@ -338,6 +338,7 @@ module.exports = function (grunt) {
                 options: {
                     remote: 'git@github.com:imcgaunn/mult-table-tabbed.git',
                     branch: 'gh-pages'
+                    
                 }
             }
         }
