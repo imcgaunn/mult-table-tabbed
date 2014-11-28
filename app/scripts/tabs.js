@@ -19,6 +19,11 @@ $(document).ready(function() {
                     .attr('href', '#tab' + tabNum)
                     .text('Tab' + tabNum));
 
+        // disable active on all li elements except
+        // for this new one being added
+        $('ul li').removeClass('active');
+        tab.addClass('active');
+
         var tabContent = $('<div>').attr('id', 'tab' + tabNum);
 
         // create table skeleton with proper id
@@ -46,6 +51,11 @@ $(document).ready(function() {
         tabNum = tabNum + 1;
 
         $('#mytabs').tabs('refresh');
+
+        // make sure the new tab added is activated
+        tab.children('a').trigger('click');
+        
+        
 
     });
 
@@ -75,7 +85,6 @@ $(document).ready(function() {
             return array[1];
         });
 
-
         IDs.each(function(i, e) {
             var href = $('[href="#tab' + e + '"]');
             var div = $('#tab' + e);
@@ -88,6 +97,8 @@ $(document).ready(function() {
             checkbox.remove(); // remove checkbox
 
         });
+
+        // trigger 'click' event so the tab gets activated correctly
 
     });
 

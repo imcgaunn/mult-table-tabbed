@@ -25,6 +25,9 @@ $(document).ready(function() {
         var multiplicandStart = parseFloat($('#multiplicandStart').val());
         var multiplicandEnd = parseFloat($('#multiplicandEnd').val());
 
+        // empty any headings
+        curdiv.children('h4').empty();
+
         curdiv.prepend($('<h4>').text(
             'multiplier start: ' + multiplierStart
                 + ', multiplier end: ' + multiplierEnd
@@ -67,6 +70,10 @@ $(document).ready(function() {
             var curRow = droppedFirstRow[i - multiplierStart];
             $(curRow).prepend($('<td>').text(i));
         }
+
+        // load the tab
+        $('#mytabs a[href="' + curli.attr('href') + '"]').trigger('click');
+        
     }
 
     $(document).ready(function() {
