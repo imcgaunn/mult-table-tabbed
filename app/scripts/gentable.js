@@ -20,12 +20,19 @@ $(document).ready(function() {
         var curdiv = $(curli.attr('href'));
         var tableID = curli.attr('href') + 'table';
 
-        // console.log(curdiv);
-
         var multiplierStart = $('#multiplierStart').val();
         var multiplierEnd = $('#multiplierEnd').val();
         var multiplicandStart = $('#multiplicandStart').val();
         var multiplicandEnd = $('#multiplicandEnd').val();
+
+        curdiv.prepend($('<h4>').text(
+            'multiplier start: ' + multiplierStart
+                + ', multiplier end: ' + multiplierEnd
+        ));
+        curdiv.prepend($('<h4>').text(
+            'multiplicand start: ' + multiplicandStart
+                + ', multiplicand end: ' + multiplicandEnd
+        ));
 
         // console.log('ier start ' + multiplierStart);
         // console.log('ier end ' + multiplierEnd);
@@ -39,7 +46,7 @@ $(document).ready(function() {
         // create a top row
         table.append($('<tr class="first">'));
         console.log('selector: ' + tableID + ' .first');
-        
+
         table.children('.first').append($('<td>')); //add blank td
         for (var i = multiplicandStart; i <= multiplicandEnd; i++) {
             table.children('.first').append($('<td>').text(i));
