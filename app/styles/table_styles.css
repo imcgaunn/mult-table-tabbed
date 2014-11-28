@@ -6,7 +6,7 @@ tr td:first-child, tbody tr:first-child {
 /* the multiplier column */
 tr td:first-child {
     padding-right: 10px;
-    color: blue;
+    color: green;
 }
 /* the multiplicand row */
 tbody tr:first-child {
