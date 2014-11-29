@@ -9,6 +9,12 @@ copied or excerpted for educational purposes with credit to the author.
 
 /* make first number in every row
 and the header row bold */
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 tr td:first-child, tbody tr:first-child {
                        font-weight: bold;
                    }
