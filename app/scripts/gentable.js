@@ -36,12 +36,12 @@ $(document).ready(function() {
         curdiv.children('h4').empty();
 
         curdiv.prepend($('<h4>').text(
-            'multiplier start: ' + multiplierStart
-                + ', multiplier end: ' + multiplierEnd
+            'multiplier start: ' + multiplierStart +
+                ', multiplier end: ' + multiplierEnd
         ));
         curdiv.prepend($('<h4>').text(
-            'multiplicand start: ' + multiplicandStart
-                + ', multiplicand end: ' + multiplicandEnd
+            'multiplicand start: ' + multiplicandStart +
+                ', multiplicand end: ' + multiplicandEnd
         ));
 
         // console.log('ier start ' + multiplierStart);
@@ -78,7 +78,7 @@ $(document).ready(function() {
             $(curRow).prepend($('<td>').text(i));
         }
 
-        // load the tab
+        // load the tab by simulating a user clicking on it
         $('#mytabs a[href="' + curli.attr('href') + '"]').trigger('click');
 
     }

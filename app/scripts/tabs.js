@@ -43,7 +43,7 @@ $(document).ready(function() {
         // add checkbox to form
         var checkbox = $('<input>').attr('type', 'checkbox')
             .attr('id', 'check'+tabNum);
-        
+
         var span = $('<span>').text('Tab' + tabNum);
 
         $('#delTabs').append(checkbox);
@@ -57,9 +57,6 @@ $(document).ready(function() {
 
         // make sure the new tab added is activated
         tab.children('a').trigger('click');
-        
-        
-
     });
 
     // handler for Delete Selected button
@@ -70,6 +67,18 @@ $(document).ready(function() {
         checkboxes = checkboxes.filter(function() {
             return $(this).is(':checked');
         });
+
+        // if there aren't checkboxes selected
+        // don't try to delete associated tabs
+        if (checkboxes.length === 0) {
+            console.log('no checkbox selected');
+
+
+            // just exit this function
+            return;
+        }
+
+        console.log('this shouldn\'t be happening');
 
         // obtain ids from each checkbox
         var checkIDs = checkboxes.map(function(i, e) {
@@ -85,6 +94,8 @@ $(document).ready(function() {
             console.log('regex match: ');
             console.log(array);
 
+            // array[0] holds the entire string
+            // that was matched against.
             return array[1];
         });
 
@@ -101,8 +112,6 @@ $(document).ready(function() {
 
         });
 
-        // trigger 'click' event so the tab gets activated correctly
-
     });
 
     // properly set active class when tabs are selected
@@ -114,13 +123,18 @@ $(document).ready(function() {
 
             // remove active class from every other li
             $('#mytabs ul li').each(function(i, e) {
+
+                /* in this case the 'e' passed as an
+                   arg is the actual DOM element, not the
+                   jquery-wrapped element */
+
                 //console.log(e)
 
                 // remove active class from every li
                 // that was *not* clicked
-                if ( !(e === cur.get(0)) ) {
+                if ( e !== cur.get(0) ) {
                     $(e).removeClass('active');
-                };
+                }
             });
         }
     }, 'li'); // filter by 'li' elements that match the above selectors
