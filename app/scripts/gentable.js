@@ -83,6 +83,22 @@ $(document).ready(function() {
 
     }
 
+    $.validator.addMethod('lessThan', function (val, elem, param) {
+
+        // if the element in question holds a value
+        // that is greater than or equal to the value
+        // held by the element identified by param
+
+        var elemVal = parseFloat($(elem).val());
+        //console.log('element value ' + elemVal);
+
+        var paramVal = parseFloat($(param).val());
+        //console.log('param value ' + paramVal);
+
+
+        return (elemVal < paramVal);
+    });
+
     $(document).ready(function() {
         $('#ranges').validate({
 
@@ -90,13 +106,15 @@ $(document).ready(function() {
             submitHandler: genTable,
             rules: {
                 multiplierStart: {
-                    required: true
+                    required: true,
+                    lessThan: '#multiplierEnd'
                 },
                 multiplierEnd: {
                     required: true
                 },
                 multiplicandStart: {
-                    required: true
+                    required: true,
+                    lessThan: '#multiplicandEnd'
                 },
                 multiplicandEnd: {
                     required: true
@@ -105,7 +123,8 @@ $(document).ready(function() {
 
             messages: {
                 multiplierStart: {
-                    required: 'please enter a starting value for the multiplier'
+                    required: 'please enter a starting value for the multiplier',
+                    lessThan: 'start of range must be less than end of range'
                 },
 
                 multiplierEnd: {
@@ -113,7 +132,8 @@ $(document).ready(function() {
                 },
 
                 multiplicandStart: {
-                    required: 'please enter a starting value for the multiplicand'
+                    required: 'please enter a starting value for the multiplicand',
+                    lessThan: 'start of range must be less than end of range'
                 },
 
                 multiplicandEnd: {
