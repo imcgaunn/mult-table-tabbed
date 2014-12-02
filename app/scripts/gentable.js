@@ -9,10 +9,6 @@
 //TODO: check if there are any tabs active before generating table
 //      put an error message on the screen otherwise.
 
-//TODO: if the start values for multiplicand or multiplier are greater
-//      than the end values, swap them or display an error.
-
-
 'use strict';
 
 $(document).ready(function() {
